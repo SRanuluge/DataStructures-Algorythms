@@ -79,6 +79,8 @@ function isContainDuplicate02() {
 //o(a + b) when comes to the time complexity good
 //o(a) Space complexity bad => creating a objet
 
+// Talk about handle errors
+
 // More readable way to write this code
 const isContainDuplicate03 = (arr1, arr2) =>
   arr1.some((item) => arr2.includes(item));
