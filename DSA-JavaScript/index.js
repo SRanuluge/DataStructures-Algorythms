@@ -1,2 +1,2 @@
-require("./bog(o)");
-require("./bog(o)/exercises.js");
+require("./big(o)");
+require("./big(o)/exercises.js");

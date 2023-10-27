@@ -1,3 +1,4 @@
+//**-------- Example 01 -----------------------------------------------------------------*/
 const boxes = [0, 1, 2, 3, 4, 5, 6];
 function ex1(input) {
   let a = 10; //O(1)
@@ -12,7 +13,7 @@ function ex1(input) {
   return a; // n(1)
 }
 //BIG O(3 + 4n)
-ex1(boxes); //O(n)
+//O(n)
 
 function ex2(input) {
   let a = 10; //O(1)
@@ -34,6 +35,52 @@ function ex2(input) {
   let whoIam = "I don't know"; //O(1)
 }
 //BIG O(4 + 7n)
-ex2(boxes); //O(n)
+//O(n)
 
-module.exports = { ex1 };
+// Finding if two arrays contains the same elements
+const array1 = ["a", "b", "c", "x"];
+const array2 = ["z", "y", "a"];
+
+//**-------- Example 02 ---------------------------------------------------------------*/
+// Using nested loops
+function isContainDuplicate01() {
+  for (const [i, v] of array1.entries()) {
+    if (v) {
+      for (const [j, q] of array2.entries()) {
+        if (v === q) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+// // O(a * b)  Time complexity
+// // O(1)       Space complexity this don't create new variables
+
+// Second method
+let map = {};
+function isContainDuplicate02() {
+  for (const [i, v] of array1.entries()) {
+    if (!map[v]) {
+      map[v] = true;
+    }
+  }
+
+  for (const [j, q] of array2.entries()) {
+    if (map[q]) {
+      return map[q];
+    }
+  }
+  return false;
+}
+
+//o(a + b) when comes to the time complexity good
+//o(a) Space complexity bad => creating a objet
+
+// More readable way to write this code
+const isContainDuplicate03 = (arr1, arr2) =>
+  arr1.some((item) => arr2.includes(item));
+// Readability is good
+// console.log(ex3(array1, array2));

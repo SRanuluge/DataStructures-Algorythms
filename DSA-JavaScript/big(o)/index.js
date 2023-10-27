@@ -17,6 +17,8 @@ function findNemo(array) {
   console.log("Call to find Nemo took " + (t1 - t0) + " miliseconds");
 }
 
+// findNemo(large);
+
 //O(1) --> Constant Time
 const boxes = [0, 1, 2, 3, 4, 5, 6];
 function findConstantTime(array) {
@@ -42,5 +44,3 @@ function findConstantTime(array1, array2) {
 // O(1000 +n/2 +3n) =>  O(n)
 
 // nested loop => O(n^2) Quadratic Time
-
-module.exports = { findNemo };
